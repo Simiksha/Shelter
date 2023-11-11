@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="boxicons/css/boxicons.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Login & Registration</title>
+</head>
+<body>
+ <div class="wrapper">
+    <nav class="nav">
+        <div class="nav-logo">
+            <p>SHELTER .</p>
+        </div>
+        <!--<div class="nav-menu" id="navMenu">
+            <ul>
+                <li><a href="#" class="link active">Home</a></li>
+                <li><a href="aboutus.html" class="link">About</a></li>
+                <li><a href="contactus.html" class="link">Contact</a></li>
+                <li><a href="service.html" class="link">Service</a></li>
+            </ul>
+        </div>-->
+        <div class="nav-button">
+            <button class="btn white-btn" id="loginBtn" onclick="login()">Sign In</button>
+            <button class="btn" id="registerBtn" onclick="register()">Sign Up</button>
+        </div>
+    </nav>
+
+<!----------------------------- Form box ----------------------------------->    
+   <div class="txt">
+	  <h1>Looking for unconditional love? <br>Visit the shelter<br> today!</h1>
+	</div>
+    <div class="form-box">
+        
+        <!------------------- login form -------------------------->
+
+        <div class="login-container" id="login">
+            <div class="top">
+                <span>Don't have an account? <a href="#" onclick="register()">Sign Up</a></span>
+                <header>Login</header>
+            </div>
+            <div class="input-box">
+                <input type="text" id="name" class="input-field" placeholder="Username " Pattern="[A-Z a-z]*" required>
+                <i class="bx bx-user"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" id="pwd" class="input-field" placeholder="Password" pattern="[A-Z a-z 0-9 @&!*_#$]*" required>
+                <i class="bx bx-lock-alt"></i>
+            </div>
+            <div class="input-box">
+                <button class="submit" onclick="signin()">Sign In</button>
+            </div>
+            <div class="two-col">
+                <div class="one">
+                    <input type="checkbox" id="login-check">
+                    <label for="login-check"> Remember Me</label>
+                </div>
+                <!--<div class="two">
+                    <label><a href="#">Forgot password?</a></label>
+                </div>-->
+            </div>
+        </div>
+
+        <!------------------- registration form -------------------------->
+        <div class="register-container" id="register">
+            <div class="top">
+                <span>Have an account? <a href="#" onclick="login()">Login</a></span>
+                <header>Sign Up</header>
+            </div>
+            <div class="two-forms">
+                <div class="input-box">
+                    <input type="text" id="fname" class="input-field" placeholder="Firstname" pattern="[A-Z a-z]*" required>
+                    <i class="bx bx-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" id="lname" class="input-field" placeholder="Lastname" pattern="[A-Z a-z]*" required>
+                    <i class="bx bx-user"></i>
+                </div>
+            </div>
+            <div class="input-box">
+                <input type="email" id="mail" class="input-field" placeholder="Email" pattern="[a-z0-9]+@[a-z0-9]+\.[a-zA-Z]{2,4}" required>
+                <i class="bx bx-envelope"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" id="pass" class="input-field" placeholder="Password" pattern="[A-Z a-z 0-9 @&!*_#$]*" required>
+                <i class="bx bx-lock-alt"></i>
+            </div>
+            <div class="input-box">
+                <button class="submit" onclick="signup()">Register</button>
+            </div>
+            <div class="two-col">
+                <div class="one">
+                    <input type="checkbox" id="register-check">
+                    <label for="register-check"> Remember Me</label>
+                </div>
+                <!--<div class="two">
+                    <label><a href="#">Terms & conditions</a></label>
+                </div>-->
+            </div>
+        </div>
+    </div>
+</div>   
+
+
+<script>
+
+    var a = document.getElementById("loginBtn");
+    var b = document.getElementById("registerBtn");
+    var x = document.getElementById("login");
+    var y = document.getElementById("register");
+
+    function login() {
+        x.style.left = "4px";
+        y.style.right = "-520px";
+        a.className += " white-btn";
+        b.className = "btn";
+        x.style.opacity = 1;
+        y.style.opacity = 0;
+    }
+
+    function register() {
+        x.style.left = "-510px";
+        y.style.right = "5px";
+        a.className = "btn";
+        b.className += " white-btn";
+        x.style.opacity = 0;
+        y.style.opacity = 1;
+    }
+
+	function signin(){
+	  var x = document.getElementById("name")
+	  if(x.validity.valueMissing){
+	   alert( "UserName Missing");
+	   return;
+	 }
+	 else if(x.validity.patternMismatch){
+	    alert("Username Should Only Contain Alphabets");
+		return;
+	 }
+	 
+	
+	 var y = document.getElementById("pwd")
+	  if(y.validity.valueMissing){
+	   alert ("password Missing");
+	   return;
+	 }
+	 else if(y.validity.patternMismatch){
+	    alert("Your Password can contain Alphabets, number and special characters (@&!*_#$)");
+		return;
+	 }
+	 
+	if(x.value && y.value){
+	   window.location.href = "main.html";
+	}
+	else {
+       alert("Please fill all the fields and give valid input")
+    }
+	}
+	
+	function signup(){
+	var a = document.getElementById("fname")
+	  if(a.validity.valueMissing){
+	   alert( "UserName Missing");
+	   return;
+	}
+	else if(a.validity.patternMismatch){
+	    alert("Username Should Only Contain Alphabets");
+		return;
+	}
+	
+	var b = document.getElementById("lname")
+	  if(b.validity.valueMissing){
+	   alert( "UserName Missing");
+	   return;
+	}
+	else if(b.validity.patternMismatch){
+	    alert("Username Should Only Contain Alphabets");
+		return;
+	}
+	
+	var c = document.getElementById("mail")
+	if(c.validity.valueMissing){
+	   alert ("Please Enter Your Mail Id");
+	   return;
+	}
+	else if(c.validity.patternMismatch){
+	   alert("Invalid mail id");
+		return;
+	}
+	
+	var d = document.getElementById("pass")
+	  if(d.validity.valueMissing){
+	   alert ("password Missing");
+	   return;
+	}
+	else if(d.validity.patternMismatch){
+	    alert("Your Password can contain Alphabets, number and special characters (@&!*_#$)");
+		return;
+	}
+	
+	if(a.value && b.value && c.value && d.value){
+	   window.location.href = "main.html";
+	}
+	else{
+	  alert("Please fill all the fields and give valid input")
+	}
+	}
+</script>
+
+</body>
+</html>

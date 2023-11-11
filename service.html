@@ -1,0 +1,76 @@
+<!doctypeHTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="boxicons/css/boxicons.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="service.css">
+    <title>service</title>
+</head>
+<body>
+<div class="wrapper">
+    <nav class="nav">
+        <div class="nav-logo">
+            <p>SHELTER .</p>
+        </div>
+        <div class="nav-menu" id="navMenu">
+            <ul>
+                <li><a href="main.html" class="link">Home</a></li>
+                <li><a href="aboutus.html" class="link">About</a></li>
+                <li><a href="contactus.html" class="link">Contact</a></li>
+                <li><a href="Service.html" class="link active">Service</a></li>
+            </ul>
+        </div>
+        <div class="nav-menu-btn">
+            <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+        </div>
+	</nav>	
+  </div>
+
+ <div class="service">
+
+      <h3>Pet Adoption Services</h3>
+
+      <p id="p1">
+
+        <B><I> Our pet adoption service is your gateway to finding a loving companion. We connect you with 
+		 rescue organizations, shelters, and individual pet owners who are looking to provide a forever
+		 home to their furry friends. Browse through profiles of dogs, cats, and various other animals in
+		 need of adoption. We offer a seamless platform for adoption applications, fostering opportunities, and
+		 adoption events to make the process easy and enjoyable.</I></B>
+    
+ </p>
+  <h3> Pet Product Marketplace</h3>
+ <p id ="p2">
+
+<b><i>Discover a wide range of high-quality pet products in our marketplace. We provide everything your pet needs, from food and toys to grooming supplies and healthcare products.
+ Our product listings include detailed descriptions and user reviews to help you make informed choices. You can shop with confidence,
+ knowing that the products you purchase are from trusted brands and suppliers.</i></b></p>
+</div>
+<script>
+   
+   function myMenuFunction() {
+    var i = document.getElementById("navMenu");
+
+    if(i.className === "nav-menu") {
+        i.className += " responsive";
+    } else {
+        i.className = "nav-menu";
+    }
+   }
+ 
+</script>
+ <script>
+        // JavaScript to trigger the animation
+        window.addEventListener('load', function() {
+            var service = document.querySelector('.service');
+            if (service) {
+                service.classList.add('animated');
+            }
+        });
+    </script>
+</body>
+
+</html

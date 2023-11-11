@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="boxicons/css/boxicons.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="main.css">
+    <title>Main Page</title>
+</head>
+<body>
+ <div class="wrapper">
+    <nav class="nav">
+        <div class="nav-logo">
+            <p>SHELTER .</p>
+        </div>
+        <div class="nav-menu" id="navMenu">
+            <ul>
+                <li><a href="#" class="link active">Home</a></li>
+                <li><a href="aboutus.html" class="link">About</a></li>
+                <li><a href="contactus.html" class="link">Contact</a></li>
+                <li><a href="service.html" class="link">Service</a></li>
+            </ul>
+
+        </div>
+		<div class="nav-button">
+            <button class="btn white-btn"><a href="index.html">Logout</a></button>
+        </div>
+        <div class="nav-menu-btn">
+            <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+        </div>
+	</nav>	
+  </div>
+  <div class="image-container">
+     <figure>
+        <a href="adoption.html">
+          <img class="img1" src="main1.jpg" alt="Image 1">
+		  <figcaption>Pet Adoption</figcaption>
+		</a> 
+      </figure>
+      <figure>	  
+		<a href="addcart.html">
+          <img class="img2"+ src="main2.jpg" alt="Image 2">
+		  <figcaption>Pet Care Products</figcaption>
+		</a>  
+	  </figure>	
+ </div>
+ <div class="info">
+ <br>
+   <center><h1>SHELTER .</h1></h1></center>
+ <br>
+  <p>"Shelter for Pet Adoption" is a comprehensive online platform that serves as a lifeline for pet enthusiasts and animal lovers alike. The primary mission of our website is to facilitate the process of pet adoption, connecting loving families with pets in need of forever homes. We offer a user-friendly interface where potential adopters can browse through a wide range of available pets, learn about their backgrounds, and take the first step towards providing a loving home. </p>
+  <br>
+  <hr>
+  <p>We understand that pet care goes beyond adoption, which is why we also provide a selection of top-quality pet care products, ranging from nutrition and wellness essentials to toys and accessories. Our platform is not just about finding a pet; it's about creating a nurturing environment for your furry friends. </p>
+  <br>
+  <hr>
+  <p>Our platform is not just about finding a pet; it's about creating a nurturing environment for your furry friends. With a commitment to promoting responsible pet ownership and ensuring the well-being of animals, Shelter for Pet Adoption is not just a website; it's a digital sanctuary where the bond between humans and pets is fostered, and where every pet's journey to a loving home begins."</p>
+  <br><br>
+ </div>
+<script>
+   
+   function myMenuFunction() {
+    var i = document.getElementById("navMenu");
+
+    if(i.className === "nav-menu") {
+        i.className += " responsive";
+    } else {
+        i.className = "nav-menu";
+    }
+   }
+ 
+</script>
+</body>  
+</html>

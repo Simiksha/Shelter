@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="boxicons/css/boxicons.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Pet Product Shop</title>
+    <style>
+       body {
+    font-family: Arial, sans-serif;
+    background:url("pay1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden; /* Hide scroll bars */
+}
+        .payment-container {
+            max-width: 300px;
+            margin-top: 5px;
+            margin-left: 70px;
+            padding: 50px;
+            opacity:60%;
+            background-color: #e3f2d3;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            max-height: 400px;
+        }
+
+        .customer-details {
+            max-width: 400px;
+            margin-top: 5px;
+            margin-left: 70px;
+            padding: 20px;
+            opacity: 60%;
+            background-color: #e3f2d3;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: auto;
+            max-height: 400px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #ad939d;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #9c7b4c;
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            min-height: 20vh;
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            height: 100px;
+            line-height: 100px;
+            background:rgb(100, 76, 52);
+            z-index: 100;
+        }
+
+        .nav-logo p {
+            color: white;
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+        .nav-menu ul {
+            display: flex;
+        }
+
+        .nav-menu ul li {
+            list-style-type: none;
+        }
+
+        .nav-menu ul li .link {
+            text-decoration: none;
+            font-weight: 500;
+            color: #fff;
+            padding-bottom: 15px;
+            margin: 0 25px;
+        }
+
+        .link:hover,
+        .active {
+            border-bottom: 2px solid #fff;
+        }
+
+        .nav-button .btn {
+            width: 130px;
+            height: 40px;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.4);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: .3s ease;
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .btn.white-btn {
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .btn.btn.white-btn:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .nav-menu-btn {
+            display: none;
+        }
+
+        @media only screen and (max-width: 786px) {
+            .nav-button {
+                display: none;
+            }
+
+            .nav-menu.responsive {
+                top: 100px;
+            }
+
+            .nav-menu {
+                position: absolute;
+                top: -800px;
+                display: flex;
+                justify-content: center;
+                background: rgba(0, 0, 0, 0.2);
+                width: 100%;
+                height: 90vh;
+                backdrop-filter: blur(20px);
+                transition: .3s;
+            }
+
+            .nav-menu ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-menu-btn {
+                display: block;
+            }
+
+            .nav-menu-btn i {
+                font-size: 25px;
+                color: #fff;
+                padding: 10px;
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 50%;
+                cursor: pointer;
+                transition: .3s;
+            }
+
+            .nav-menu-btn i:hover {
+                background: rgba(255, 255, 255, 0.15);
+            }
+
+            .txt {
+                display: none;
+            }
+        }
+
+        @media only screen and (max-width: 540px) {
+            .wrapper {
+                min-height: 20vh;
+            }
+        }
+
+        /* Add responsive design */
+        @media (max-width: 600px) {
+            .payment-container {
+                max-width: 90%;
+                margin: 10px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>SHELTER .</p>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="main.html" class="link">Home</a></li>
+                    <li><a href="aboutus.html" class="link">About</a></li>
+                    <li><a href="contactus.html" class="link">Contact</a></li>
+                    <li><a href="service.html" class="link">Service</a></li>
+                </ul>
+            </div>
+            <div class="nav-menu-btn">
+                <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+            </div>
+        </nav>
+    </div>
+    <div class="customer-details" id="customer-container">
+        <form id="customer-form">
+            <h1>CUSTOMER DETAILS</h1>
+            <label for="cust-name">Customer Name:</label>
+            <input type="text" id="cust-name" name="cust-name" placeholder="abc" pattern="^[A-Za-z ]*$" required>
+
+            <label for="ph-number">Phone Number:</label>
+            <input type="tel" id="ph-number" name="ph-number" placeholder="1234567890" pattern="[0-9]{10}" required>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="5" required></textarea>
+
+            <button type="button" onclick="custdetails()">Submit</button>
+        </form>
+    </div>
+    <div class="payment-container" style="display: none;" id="payment-container">
+        <form id="payment-form">
+            <h1>PAYMENT DETAILS</h1>
+            <label for="card-number">Card Number:</label>
+            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" pattern="[0-9]{16}" required>
+
+            <label for="expiry">Expiration Date:</label>
+            <input type="text" id="expiry" placeholder="MM/YY" pattern="\d{2}\/\d{2}" required>
+
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" placeholder="123" pattern="[0-9]{3}" required>
+
+            <button type="button" id="submit-button" onclick="validatePaymentForm()">Submit Payment</button>
+        </form>
+    </div>
+
+    <script>
+        function myMenuFunction() {
+            var i = document.getElementById("navMenu");
+            if (i.className === "nav-menu") {
+                i.className += " responsive";
+            } else {
+                i.className = "nav-menu";
+            }
+        }
+
+        function custdetails() {
+            const custNameInput = document.getElementById('cust-name');
+            const phNumberInput = document.getElementById('ph-number');
+            const addressInput = document.getElementById('address');
+            const namePattern = /^[A-Za-z ]*$/;
+            const phonePattern = /^[0-9]{10}$/;
+
+            if (!namePattern.test(custNameInput.value)) {
+                alert('Invalid Customer Name. Please use only letters (A-Z, a-z).');
+                return;
+            }
+
+            if (!phonePattern.test(phNumberInput.value)) {
+                alert('Invalid Phone Number. Please enter a 10-digit number.');
+                return;
+            }
+
+            if (addressInput.value.trim() === '') {
+                alert('Address cannot be empty.');
+                return;
+            }
+
+            alert('Customer details collected successfully!!');
+            document.getElementById('customer-container').style.display = 'none';
+            document.getElementById('payment-container').style.display = 'block';
+        }
+
+   function validatePaymentForm() {
+    const cardNumberInput = document.getElementById('card-number');
+    const expiryInput = document.getElementById('expiry');
+    const cvvInput = document.getElementById('cvv');
+
+    // Validate Card Number
+    const cardNumberPattern = /^[0-9]{16}$/;
+    if (!cardNumberPattern.test(cardNumberInput.value)) {
+        alert('Invalid Card Number. Please enter a valid 16-digit card number.');
+        return;
+    }
+
+    // Validate Expiry Date
+    const expiryPattern = /^(0[1-9]|1[0-2])\/(\d{2})$/;
+    const currentDate = new Date();
+    const currentYear = currentDate.getFullYear() % 100;
+    const currentMonth = currentDate.getMonth() + 1;
+
+    if (!expiryPattern.test(expiryInput.value)) {
+        alert('Invalid Expiry Date. Please use the MM/YY format.');
+        return;
+    }
+
+    const [, month, year] = expiryInput.value.match(expiryPattern);
+
+    if (parseInt(year) < currentYear || (parseInt(year) === currentYear && parseInt(month) < currentMonth)) {
+        alert('Invalid Expiry Date. The card has expired.');
+        return;
+    }
+
+    // Validate CVV
+    const cvvPattern = /^\d{3}$/;
+    if (!cvvPattern.test(cvvInput.value)) {
+        alert('Invalid CVV. Please enter a 3-digit number.');
+        return;
+    }
+
+    alert('Payment Successful!');
+    window.location.href = "addcart.html";
+}
+
+
+
+    </script>
+</body>
+
+</html>
